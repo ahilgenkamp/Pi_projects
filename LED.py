@@ -6,8 +6,7 @@ import os
 import sys
 
 class LED(object):
-	"""docstring for relay_switch
-	currently set up for a 2 channel relay
+	"""Code to turn on / off LED or to flash
 	"""
 	def __init__(self, pin, pin_setup='BOARD'):
 		self.pin = pin
@@ -19,16 +18,16 @@ class LED(object):
 		GPIO.setup(self.pin, GPIO.OUT)
 		
 	def on(self):
-		GPIO.output(self.pin, GPIO.LOW)
+		GPIO.output(self.pin, GPIO.HIGH)
 
 	def off(self):
-		GPIO.output(self.pin, GPIO.HIGH)
+		GPIO.output(self.pin, GPIO.LOW)
 
 	def flash(self, num, sleep):
 		while num > 0:
-			GPIO.output(self.pin, GPIO.HIGH)
-			time.sleep(sleep)
-			GPIO.output(self.pin, GPIO.LOW)
+			self.on()
+			time.sleep(1)
+			self.off()
 			num -= 1
 
 # Create loop to flash LEDs
