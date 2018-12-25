@@ -26,8 +26,8 @@ class LED(object):
 	def flash(self, num, sleep):
 		while num > 0:
 			self.on()
-			time.sleep(1)
-			self.on()
+			time.sleep(sleep)
+			self.off()
 			num -= 1
 
 # Create loop to flash LEDs
@@ -35,7 +35,7 @@ class LED(object):
 if __name__ == '__main__':
 	try:
 		LED = LED(pin=18, pin_setup='BCM')
-		LED.flash(10,2)
+		LED.flash(num=10,sleep=2)
 	except KeyboardInterrupt:
 		print('\n\n *** Stopping Program ***')
 		try:
