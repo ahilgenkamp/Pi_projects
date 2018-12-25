@@ -23,19 +23,19 @@ class LED(object):
 	def off(self):
 		GPIO.output(self.pin, GPIO.LOW)
 
-	def flash(self, num, sleep):
-		while num > 0:
+	def flash(self, flash, sleep):
+		for n in range(0,flash):
 			self.on()
 			time.sleep(sleep)
 			self.off()
-			num -= 1
 
 # Create loop to flash LEDs
 
 if __name__ == '__main__':
 	try:
 		LED = LED(pin=18, pin_setup='BCM')
-		#LED.flash(10,1)
+		LED.flash(flash=10, sleep=1.5)
+		'''
 		LED.on()
 		time.sleep(1)
 		LED.off()
@@ -43,6 +43,7 @@ if __name__ == '__main__':
 		LED.on()
 		time.sleep(5)
 		LED.off()
+		'''
 	except KeyboardInterrupt:
 		print('\n\n *** Stopping Program ***')
 		try:
