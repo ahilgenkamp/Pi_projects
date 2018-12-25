@@ -35,10 +35,18 @@ class LED(object):
 if __name__ == '__main__':
 	try:
 		LED = LED(pin=18, pin_setup='BCM')
-		LED.flash(num=10,sleep=2)
+		#LED.flash(10,1)
+		LED.on()
+		time.sleep(1)
+		LED.off()
+		time.sleep(1)
+		LED.on()
+		time.sleep(5)
+		LED.off()
 	except KeyboardInterrupt:
 		print('\n\n *** Stopping Program ***')
 		try:
 			sys.exit(0)
 		except SystemExit:
 			os._exit(0)
+
