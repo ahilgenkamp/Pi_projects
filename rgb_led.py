@@ -52,7 +52,7 @@ class rgb_led(object):
 
 if __name__ == '__main__':
 	try:
-		RGB = rgb_led(red_pin=5, green_pin=6, blue_pin=13, pin_setup='BCD')
+		RGB = rgb_led(red_pin=5, green_pin=6, blue_pin=13, pin_setup='BCM')
 		RGB.on(color='red')
 		time.sleep(1)
 		RGB.on(color='green')
