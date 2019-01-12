@@ -6,7 +6,7 @@ import sys
 class simple_button(object):
 	"""Class for use with an simple click button
 	"""
-	def __init__(self, function, pin, *args, pin_setup='BOARD', **kwargs):
+	def __init__(self, function, *args, pin=7, pin_setup='BOARD', **kwargs):
 		self.pin = pin
 		if pin_setup == 'BCM':
 			GPIO.setmode(GPIO.BCM)
@@ -31,7 +31,7 @@ if __name__ == '__main__':
 		def button_print(text):
 			print(text)
 
-		simple_button(button_print, 17, 'Hey!', pin_setup='BCM')
+		simple_button(button_print, 'Hey!', pin=17, pin_setup='BCM')
 		while True:
 			time.sleep(0.5)		
 	except KeyboardInterrupt:
