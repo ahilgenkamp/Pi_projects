@@ -43,6 +43,8 @@ if __name__ == '__main__':
 	except KeyboardInterrupt:
 		print('\n\n *** Stopping Program ***')
 		try:
+			GPIO.cleanup()
 			sys.exit(0)
 		except SystemExit:
+			GPIO.cleanup()
 			os._exit(0)
