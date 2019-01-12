@@ -28,9 +28,9 @@ class rgb_led(object):
 		self.p_r = GPIO.PWM(self.red, 2000)
 		self.p_g = GPIO.PWM(self.green, 2000)
 		self.p_b = GPIO.PWM(self.blue, 2000)
-		p_r.start(0)
-		p_g.start(0)
-		p_b.start(0)
+		self.p_r.start(0)
+		self.p_g.start(0)
+		self.p_b.start(0)
 		
 	def map(self, rgb_val):
 		return rgb_val * 100 / 255
@@ -40,14 +40,14 @@ class rgb_led(object):
 		g_val = map(color[1])
 		b_val = map(color[2])
 		
-		p_r.ChangeDutyCycle(100-r_val)
-		p_g.ChangeDutyCycle(100-g_val)
-		p_b.ChangeDutyCycle(100-b_val)
+		self.p_r.ChangeDutyCycle(100-r_val)
+		self.p_g.ChangeDutyCycle(100-g_val)
+		self.p_b.ChangeDutyCycle(100-b_val)
 		
 	def off(self):
-		p_r.start(0)
-		p_g.start(0)
-		p_b.start(0)
+		self.p_r.start(0)
+		self.p_g.start(0)
+		self.p_b.start(0)
 
 if __name__ == '__main__':
 	try:
