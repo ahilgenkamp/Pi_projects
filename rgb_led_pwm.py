@@ -36,9 +36,9 @@ class rgb_led(object):
 		return rgb_val * 100 / 255
 	
 	def setColor(self, color):  #input color as a tuple
-		r_val = map(color[0])
-		g_val = map(color[1])
-		b_val = map(color[2])
+		r_val = self.map(color[0])
+		g_val = self.map(color[1])
+		b_val = self.map(color[2])
 		
 		self.p_r.ChangeDutyCycle(100-r_val)
 		self.p_g.ChangeDutyCycle(100-g_val)
