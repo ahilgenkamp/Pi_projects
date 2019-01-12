@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import os
 import sys
-from .rgb_led import rgb_led
+from rgb_led import rgb_led
 
 class simple_button(object):
 	"""Class for use with an simple click button
