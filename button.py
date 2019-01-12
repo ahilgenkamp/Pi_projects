@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import os
 import sys
+from .rgb_led import rgb_led
 
 class simple_button(object):
 	"""Class for use with an simple click button
@@ -28,10 +29,17 @@ class simple_button(object):
 
 if __name__ == '__main__':
 	try:
-		def button_print(text):
-			print(text)
+		def run_rgb_led(r_pin, g_pin, b_pin, rgb_setup='BOARD'):
+			RGB = rgb_led(red_pin=r_pin, green_pin=g_pin, blue_pin=b_pin, pin_setup=rgb_setup)
+			RGB.on(color='red')
+			time.sleep(1)
+			RGB.on(color='green')
+			time.sleep(1)
+			RGB.on(color='blue')
+			time.sleep(1)
+			RGB.off()
 
-		simple_button(button_print, 'Hey!', pin=17, pin_setup='BCM')
+		simple_button(run_rgb_led, 5, 6, 13, pin=17, pin_setup='BCM', rgb_setup='BCM')
 		while True:
 			time.sleep(0.5)		
 	except KeyboardInterrupt:
