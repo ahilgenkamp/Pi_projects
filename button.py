@@ -14,7 +14,7 @@ class simple_button(object):
 		else:
 			GPIO.setmode(GPIO.BOARD)
 		GPIO.setwarnings(False)
-		GPIO.setup(self.pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+		GPIO.setup(self.pin, GPIO.IN, pull_up_down=GPIO.PUD_UP) #set for use with internal pull up resistor.  If using a resistor on a bread board this can be removed.
 		GPIO.remove_event_detect(self.pin)
 		GPIO.add_event_detect(self.pin, GPIO.RISING, callback=lambda x: self.callback(function, *args, **kwargs))
 		
@@ -24,8 +24,6 @@ class simple_button(object):
 		else:
 			pass
 		
-
-# wait for touch sensor activation
 
 if __name__ == '__main__':
 	try:
