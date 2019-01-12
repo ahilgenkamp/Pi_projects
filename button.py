@@ -35,6 +35,8 @@ if __name__ == '__main__':
 			time.sleep(1)
 			RGB.on(color='blue')
 			time.sleep(1)
+			RGB.on(color='magenta')
+			time.sleep(1)
 			RGB.off()
 
 		simple_button(run_rgb_led, 5, 6, 13, pin=17, pin_setup='BCM', rgb_setup='BCM')
