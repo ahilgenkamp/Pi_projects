@@ -32,6 +32,7 @@ if __name__ == '__main__':
 			RGB = rgb_led(red_pin=r_pin, green_pin=g_pin, blue_pin=b_pin, pin_setup=rgb_setup)
 			for c in color_list:
 				RGB.setColor(color=(c[0],c[1],c[2]))
+				time.sleep(0.25)
 			RGB.off()
 
 		simple_button(run_rgb_led, 19, 20, 21, pin=17, pin_setup='BCM', rgb_setup='BCM')
