@@ -14,7 +14,7 @@ class rgb_led(object):
 			GPIO.setmode(GPIO.BCM)
 		else:
 			GPIO.setmode(GPIO.BOARD)
-			GPIO.setwarnings(False)
+		GPIO.setwarnings(False)
 		#SETUP FOR EACH ANODE
 		GPIO.setup(self.red, GPIO.OUT)
 		GPIO.setup(self.green, GPIO.OUT)
