@@ -40,9 +40,9 @@ class rgb_led(object):
 		g_val = self.map(color[1])
 		b_val = self.map(color[2])
 		
-		self.p_r.ChangeDutyCycle(100-r_val)
-		self.p_g.ChangeDutyCycle(100-g_val)
-		self.p_b.ChangeDutyCycle(100-b_val)
+		self.p_r.ChangeDutyCycle(r_val)
+		self.p_g.ChangeDutyCycle(g_val)
+		self.p_b.ChangeDutyCycle(b_val)
 		
 	def off(self):
 		self.p_r.start(0)
