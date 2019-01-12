@@ -29,21 +29,13 @@ if __name__ == '__main__':
 	try:
 		def run_rgb_led(r_pin, g_pin, b_pin, rgb_setup='BOARD'):
 			RGB = rgb_led(red_pin=r_pin, green_pin=g_pin, blue_pin=b_pin, pin_setup=rgb_setup)
-			RGB.on(color='red')
-			time.sleep(1)
-			RGB.on(color='green')
-			time.sleep(1)
-			RGB.on(color='blue')
-			time.sleep(1)
-			RGB.on(color='yellow')
-			time.sleep(1)
-			RGB.on(color='cyan')
-			time.sleep(1)
-			RGB.on(color='magenta')
-			time.sleep(1)
+			for r in range(256):
+				for g in range(256):
+					for b in range(256):
+						RGB.setColor(color=(r,g,b))
 			RGB.off()
 
-		simple_button(run_rgb_led, 5, 6, 13, pin=17, pin_setup='BCM', rgb_setup='BCM')
+		simple_button(run_rgb_led, 19, 20, 21, pin=17, pin_setup='BCM', rgb_setup='BCM')
 		while True:
 			time.sleep(0.5)		
 	except KeyboardInterrupt:
