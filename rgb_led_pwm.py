@@ -32,7 +32,7 @@ class rgb_led(object):
 		self.p_g.start(0)
 		self.p_b.start(0)
 		
-	def map(self, rgb_val):
+	def map(rgb_val):
 		return rgb_val * 100 / 255
 	
 	def setColor(self, color):  #input color as a tuple
