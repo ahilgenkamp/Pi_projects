@@ -27,7 +27,7 @@ class simple_button(object):
 
 if __name__ == '__main__':
 	try:
-		color_list = [(255,0,0),(0,255,0),(0,0,255),(255,255,0),(0,255,255),(255,0,255),(255,69,0),(112,128,144)]
+		color_list = [(255,0,0),(0,255,0),(0,0,255),(255,255,0),(0,255,255),(255,0,255),(255,127,0),(148,0,211)]
 		def run_rgb_led(r_pin, g_pin, b_pin, rgb_setup='BOARD'):
 			RGB = rgb_led(red_pin=r_pin, green_pin=g_pin, blue_pin=b_pin, pin_setup=rgb_setup)
 			for c in color_list:
