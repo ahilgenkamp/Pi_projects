@@ -45,8 +45,12 @@ class rgb_led(object):
 			GPIO.output(self.red, True)
 			GPIO.output(self.green, False)
 			GPIO.output(self.blue, True)
+		elif color == 'cyan':
+			GPIO.output(self.red, False)
+			GPIO.output(self.green, True)
+			GPIO.output(self.blue, True)
 		else:
-			print('Choose a valid color: (red, green, blue)')
+			print('Choose a valid color: (red, green, blue, yellow, magenta, cyan)')
 			GPIO.output(self.red, False)
 			GPIO.output(self.green, False)
 			GPIO.output(self.blue, False)
