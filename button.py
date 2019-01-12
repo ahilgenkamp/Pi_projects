@@ -31,7 +31,7 @@ if __name__ == '__main__':
 		def button_print(text):
 			print(text)
 
-		simple_button(button_print, 'Hey!', pin=17, pin_setup='BCM')
+		simple_button(button_print, 17, 'Hey!', pin_setup='BCM')
 		while True:
 			time.sleep(0.5)		
 	except KeyboardInterrupt:
