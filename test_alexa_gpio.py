@@ -28,3 +28,6 @@ def gpio_control(status, pin):
     if status in ['off', 'low']:    GPIO.output(pinNum, GPIO.LOW)
 
     return statement('Turning pin {} {}'.format(pin, status))
+
+if __name__ == '__main__':
+	app.run()
