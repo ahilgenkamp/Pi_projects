@@ -16,14 +16,17 @@ class rgb_led(object):
 		else:
 			GPIO.setmode(GPIO.BOARD)
 		GPIO.setwarnings(False)
+		
 		#SETUP FOR EACH ANODE
 		GPIO.setup(self.red, GPIO.OUT)
 		GPIO.setup(self.green, GPIO.OUT)
 		GPIO.setup(self.blue, GPIO.OUT)
+		
 		#SET ALL PINS TO FALSE TO START
 		GPIO.output(self.red, False)
 		GPIO.output(self.green, False)
 		GPIO.output(self.blue, False)
+		
 		#SETUP FOR PWM (2000KHz frequency)
 		self.p_r = GPIO.PWM(self.red, 2000)
 		self.p_g = GPIO.PWM(self.green, 2000)
