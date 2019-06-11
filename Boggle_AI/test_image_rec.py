@@ -13,14 +13,15 @@ def threshold(imageArray):
 
 	for r in imageArray:
 		for p in r:
-			avgNum = functools.reduce(lambda x, y: x+y, p/3)
+			avgNum = np.mean(p) 
+			#another option to get average for a list: functools.reduce(lambda x, y: x+y, p/3)
 			balanceAr.append(avgNum)
 
-	balance = functools.reduce(lambda x, y: x+y, balanceAr)/len(balanceAr)
+	balance = np.mean(balanceAr)
 
 	for r in newAr:
 		for p in r:
-			if functools.reduce(lambda x, y: x+y, p/3) > balance:
+			if np.mean(p) > balance:
 				p[0] = 255
 				p[1] = 255
 				p[2] = 255
