@@ -3,10 +3,43 @@
 from PIL import Image
 import numpy as np
 import os
+from matplotlib import pyplot as plt
+import functools
+
+
+def threshold(imageArray):
+	balanceAr = []
+	newAr = imageArray
+
+	for r in imageArray:
+		for p in r:
+			avgNum = functools.reduce(lambda x, y: x+y, p/3)
+			balanceAr.append(avgNum)
+
+	balance = functools.reduce(lambda x, y: x+y, balanceAr)/len(balanceAr)
+
+	for r in newAr:
+		for p in r:
+			if functools.reduce(lambda x, y: x+y, p/3) > balance:
+				p[0] = 255
+				p[1] = 255
+				p[2] = 255
+			else:
+				p[0] = 0
+				p[1] = 0
+				p[2] = 0
+	return newAr
 
 cwd = os.getcwd()
 
 i = Image.open(cwd+"\\boggle_images\\boggle test.jpg")
-iar = np.asarray(i)
+iar = np.array(i)
 
-print(iar[0])
+#Show original image
+#plt.imshow(iar)
+#plt.show()
+
+#show thresholding for the image
+iar2 = threshold(iar)
+plt.imshow(iar2)
+plt.show() 
