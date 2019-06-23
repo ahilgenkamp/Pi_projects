@@ -29,16 +29,34 @@ boggle_board = [
 def extend_path(path, min_len=3, max_len=5):
 	i = path[0]
 	j = path[1]
-	word = boggle_board[i][j]
-	if len(word) < max_len:
-		for x, y in [(0,1),(1,0),(0,-1),(-1,0),(1,1),(1,-1),(-1,-1),(-1,1)]:
-				return word+boggle_board[i+x][j+y]
-	else:
-		return word		
-	
+	paths = []
+	paths.append([boggle_board[i][j]])
+	for p in range(len(paths)):
+			try:
+				for x, y in [(0,1),(1,0),(0,-1),(-1,0),(1,1),(1,-1),(-1,-1),(-1,1)]:
+					paths[p] = paths[p].append(boggle_board[i+x][j+y])
+			except:
+				pass
+	return paths
 
 
 print(extend_path(path=(0,0)))
+
+
+
+'''
+while len(max(paths, key=len)) < max_len:
+		for p in range(paths):
+			try:
+				for x, y in [(0,1),(1,0),(0,-1),(-1,0),(1,1),(1,-1),(-1,-1),(-1,1)]:
+					paths[p] = paths[p]+extend_path(i+x,j+y)
+			except:
+				pass
+		print(paths)
+
+
+
+'''
 
 '''
 answer_list = []
