@@ -47,8 +47,8 @@ class pi_camera(object):
 if __name__ == '__main__':
 	try:
 		cwd = os.getcwd()
-		pi_camera().preview(t=5)
-		#pi_camera().capture(cwd+"/boggle_images/boggle test.jpg", num=1, t=6)
+		#pi_camera().preview(t=5)
+		pi_camera().capture(cwd+"/boggle_images/individual_letters/A_04.jpg", num=1, t=4)
 	except KeyboardInterrupt:
 		print('\n\n *** Stopping Program ***')
 		try:
