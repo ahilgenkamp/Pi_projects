@@ -1,5 +1,5 @@
 #python program to take picture when button is pressed
-from ..button import simple_button
+from ...button import simple_button
 from ..pi_camera import pi_camera
 import os
 import time
