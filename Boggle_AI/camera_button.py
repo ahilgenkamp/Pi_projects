@@ -73,6 +73,7 @@ if __name__ == '__main__':
 		def take_pic(save_path):
 			file_name = datetime.datetime.now()+'.jpg'
 			pi_camera.capture(save_path=save_path+'/'+file_name, t=0.5)
+			print('Picture Taken')
 
 		cwd = os.getcwd()
 		simple_button(take_pic, cwd+"/boggle_images", pin=17, pin_setup='BCM')	
