@@ -27,7 +27,7 @@ class simple_button(object):
 if __name__ == '__main__':
 	try:
 		def test():
-    		print('Hey!')
+			print('Hey!')
 
 		simple_button(test, pin=17, pin_setup='BCM')
 		while True:
