@@ -9,9 +9,10 @@ import sys
 if __name__ == '__main__':
 	try:
 		#create function to pass when button is pressed
+		cam = pi_camera()
 		def take_pic(save_path):
 			file_name = str(datetime.datetime.now())+'.jpg'
-			pi_camera().capture(save_path=save_path+'/'+file_name, t=0.5)
+			cam.capture(save_path=save_path+'/'+file_name, t=0.5)
 			print('Picture Taken')
 		cwd = os.getcwd()
 		'''
