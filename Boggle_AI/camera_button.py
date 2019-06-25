@@ -6,7 +6,7 @@ import time
 import datetime
 import importlib
 
-importlib.import_module(button)
+importlib.import_module(simple_button)
 importlib.import_module(pi_camera)
 
 if __name__ == '__main__':
