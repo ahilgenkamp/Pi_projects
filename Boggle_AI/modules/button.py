@@ -29,7 +29,7 @@ if __name__ == '__main__':
 		def test():
 			print('Hey!')
 
-		simple_button(test, pin=17, pin_setup='BCM')
+		simple_button(test, pin=11, pin_setup='BOARD')
 		while True:
 			time.sleep(0.5)		
 	except KeyboardInterrupt:
