@@ -1,3 +1,27 @@
 #python program to take picture when button is pressed
-
 from .. import button
+from .. import pi_camera
+import os
+import time
+import datetime
+
+if __name__ == '__main__':
+	try:
+		#create function to pass when button is pressed
+		def take_pic(save_path):
+			file_name = datetime.datetime.now()+'.jpg'
+			pi_camera.capture(save_path=save_path+'/'+file_name, t=0.5)
+
+		cwd = os.getcwd()
+		simple_button(take_pic, cwd+"/boggle_images", pin=17, pin_setup='BCM')	
+		while True:
+			time.sleep(0.5)
+
+	except KeyboardInterrupt:
+		print('\n\n *** Stopping Program ***')
+		try:
+			GPIO.cleanup()
+			sys.exit(0)
+		except SystemExit:
+			GPIO.cleanup()
+			os._exit(0)
