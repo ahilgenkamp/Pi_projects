@@ -32,7 +32,7 @@ def threshold(imageArray):
 
 cwd = os.getcwd()
 
-i = Image.open(cwd+"\\boggle_images\\boggle test.jpg")
+i = Image.open(cwd+"\\boggle_images\\2019-06-25 225947.825859.jpg")
 iar = np.array(i)
 
 #Show original image
